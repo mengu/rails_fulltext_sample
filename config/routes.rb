@@ -1,4 +1,7 @@
 RailsFulltextSample::Application.routes.draw do
+
+  get '/companies/search'
+
   resources :companies
 
   # The priority is based upon order of creation:
