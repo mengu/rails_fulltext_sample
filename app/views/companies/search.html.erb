@@ -1,4 +1,4 @@
-<% if !@is_search %>
+<% if !params[:commit] %>
 <h1>Search companies</h1>
 
 <%= form_tag('/companies/search', :method => 'get') do %>

@@ -2,15 +2,12 @@ class CompaniesController < ApplicationController
 
   def search
     if params[:commit]
-      @is_search = true
       @companies = Company.search do
         if params[:name]; keywords(params[:name]); end
         [:city, :state, :country].each do |field|
           if params[field] != ""; with(field, params[field]); end
         end
       end.results
-    else
-      @is_search = false
     end
   end
 
